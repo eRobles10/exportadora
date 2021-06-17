@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}}
+{% load static %}
+{% block title %}
+<h2>Certification</h2>
+{% endblock %}
+
+{% block content  %}
+ <!-- events section start -->
+      <main class="events_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="news_taital">Certification</h1>
+                  <p class="news_text">Our business is certified, and here you can see how our process are validated.  </p>
+               </div>
+            </div>
+            {% for certification in certification %}
+            <div class="events_section_2">
+               <div class="row">
+                  <div class="col-md-5">
+                     <div class="img_7"><img src="{{certification.image.url}}" class="img_7"></div>
+                     <div class="date_bt">
+                       {% comment %}
+                           <div class="date_text active"><a href="#">01</a></div>
+                           <div class="date_text"><a href="#">FEB</a></div>
+                       {% endcomment %}
+                     </div>
+                  </div>
+                  <div class="col-md-7">
+                     <h1 class="give_taital_1">{{certification.title}}</h1>
+                     <p class="ipsum_text_1">{{certification.content}}</p>
+                     <div class="donate_btn_main">
+                        {% comment %}
+                           <div class="readmore_btn"><a href="#">Ver Más</a></div>
+                        {% endcomment %}
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         {% endfor %}
+      </main>
+      <!-- services section end -->
+{% endblock  %}

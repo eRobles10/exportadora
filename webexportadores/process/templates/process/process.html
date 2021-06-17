@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}
+Process{% endblock %}
+
+{% block content  %}
+<!-- news section start -->
+ <main class="news_section padding_90_top_bottom">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="news_taital">Process</h1>
+                  <p class="news_text"></p>
+               </div>
+            </div>
+   {% for process in processes %}
+            <div class="news_section_2">
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="news_img"><img src="{{process.image.url}}"></div>
+                  </div>
+                  <div class="col-md-6">
+                     <h1 class="give_taital">{{process.title}}</h1>
+                     <p class="ipsum_text">{{process.content|safe}}
+                     </p>
+                     <div class="donate_btn_main">
+                     <!--<div class="readmore_btn"><a href="#">Ver Más</a></div>-->
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      {% endfor %}
+       </main>
+      <!-- news section end -->
+{% endblock  %}

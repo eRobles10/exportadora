@@ -1,0 +1,163 @@
+{% extends 'core/base.html' %}
+{%load static%}
+{% block title %}
+Start
+{% endblock %}
+
+
+{% block content  %}
+<!-- banner section start -->
+      <div class="banner_section padding_90_top_bottom">
+         <div class="container">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+               <ol class="carousel-indicators">
+                {% for post in posts %}
+                  <li data-target="#carouselExampleIndicators" class="{% if forloop.counter0 == 0 %}active{% endif %}" data-slide-to="{{forloop.counter0}}"></li>
+                {% endfor %}
+               </ol>
+               <div class="carousel-inner">
+                  {% for post in posts %}
+                     <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <h1 class="banner_taital">{{post.title}}</h1>
+                              <p class="banner_text">{{post.intro}} </p>
+                              <div class="read_bt"><a href="{% url 'post' post.id %}">Read More</a></div>
+                           </div>
+                        </div>
+                     </div>
+                  {% endfor %}
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+      <!-- banner section end -->
+
+        <!-- about section start -->
+      <div class="about_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-4">
+                  <h2 class="about_taital">About us...</h2>
+                  <p class="about_text">{{about.content}}
+                  </p>
+                  <div class="readmore_bt"><a href="{% url 'about' %}">Read More</a></div>
+               </div>
+               <div class="col-sm-8">
+                  <div class="video_container"><video  controls>
+                        <source src="{{ about.videofile.url }}" type='video/mp4'>
+                        Your browser does not support the video tag.
+                        </video></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- about section end -->
+
+      <!-- news section start -->
+      <div class="news_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="news_taital">Process</h1>
+                  <p class="news_text">This is how we make sure our products stands to the highest quality.</p>
+               </div>
+            </div>
+            <div class="news_section_2">
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="news_img"><img src="{{service_intro.image.url}}"></div>
+                  </div>
+                  <div class="col-md-6">
+                     <h1 class="give_taital">{{service_intro.title|safe}}</h1>
+                     <p class="ipsum_text">{{service_intro.content|safe}}   available, but the majority have suffered alteration in some form, by injected humour, or randomised
+                     </p>
+                      <div class="donate_btn_main">
+                        <div class="readmore_btn"><a href="{% url 'process' %}">Read More</a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- news section end -->
+
+      <!-- events section start -->
+      <div class="events_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                  <h1 class="news_taital">Certification</h1>
+                   <p class="news_text">Our business is certified, and here you can see how our process are validated. </p>
+               </div>
+            </div>
+            <div class="events_section_2">
+               <div class="row">
+                  <div class="col-md-5">
+                     <div class="img_7"><img src="{{certification.image.url}}" class="img_7"></div>
+                     <div class="date_bt">
+                        <div class="date_text active"><a href="#">{{certification.created|date:"d"}}</a></div>
+                        <div class="date_text"><a href="#">{{certification.created|date:"M"}}</a></div>
+                     </div>
+                  </div>
+                  <div class="col-md-7">
+                     <h1 class="give_taital_1">{{certification.title}}</h1>
+                     <p class="ipsum_text_1">{{certification.content}}</p>
+                     <div class="donate_btn_main">
+                        <div class="readmore_btn"><a href="{% url 'process' %}">Read More</a></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- services section end -->
+
+      <!-- benefits section start -->
+      <div class="donate_section layout_padding">
+         <div class="container">
+            <h1 class="donate_taital">Our Team </h1>
+            <div class="donate_taital_main">
+               <div id="main_slider" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                     <div class="carousel-item active">
+                        <div class="donate_left">
+                           <div class="client_img"><img src="{% static 'core/images/client-img.png' %}"></div>
+                        </div>
+                        <div class="donate_right">
+                           <h3 class="client_name_text">Mardo Merk</h3>
+                           <p class="dummy_text">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefinedIf you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="donate_left">
+                           <div class="client_img"><img src="{% static 'core/images/client-img.png' %}"></div>
+                        </div>
+                        <div class="donate_right">
+                           <h3 class="client_name_text">Mardo Merk</h3>
+                           <p class="dummy_text">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefinedIf you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="donate_left">
+                           <div class="client_img"><img src="{% static 'core/images/client-img.png' %}"></div>
+                        </div>
+                        <div class="donate_right">
+                           <h3 class="client_name_text">Mardo Merk</h3>
+                           <p class="dummy_text">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefinedIf you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
+                        </div>
+                     </div>
+                  </div>
+                  <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+                  <i class="fa fa-angle-right"></i>
+                  </a>
+                  <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+                  <i class="fa fa-angle-left"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- donate section end -->
+{% endblock  %}

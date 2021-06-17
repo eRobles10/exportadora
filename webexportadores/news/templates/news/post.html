@@ -1,0 +1,186 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}
+Blog
+{% endblock %}
+
+
+
+
+{% block content %}
+<main id="content" >
+    <div class=" intropost-section padding_90_top_bottom">
+        <div class="container">
+            <div class="text-center">
+                <div class="mb-7">
+                    <h1 class="post_title">{{post.title}}</h1>
+                    <p class="post_text">{{post.intro}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container top-50-padding space-2 space-3-bottom--lg">
+      <div class="row">
+        <div class="col-lg-9 order-lg-1 mb-9 mb-lg-0">
+          <!-- Info -->
+          <ul class="list-inline text-secondary mb-9">
+            <li class="list-inline-item mr-4">
+              <i class="far fa-calendar-alt mr-2"></i>
+              {{post.updated|date:"M d, Y"}}
+            </li>
+           
+            <li class="list-inline-item mr-4">
+              <i class="far fa-folder-open mr-2"></i>
+              {% for category in post.categories.all %}
+                  <a  href="{% url 'category' category.id %}">{{category.name}}</a>{% if not forloop.last %},{% endif %} 
+              {% endfor %}
+            </li>
+          </ul>
+          <!-- End Info -->
+
+          <!-- Description -->
+            <div class="mb-9">
+                {%load parse_input  %}
+                {% parse_content_to_list post.content as paragraphs %}
+
+                {% for paragraph in paragraphs%}
+                  <p>{{paragraph}}</p>
+                  {% if forloop.counter == 1  %}
+                  <div class="clearfix">
+                        <img class="img-fluid w-50 float-left mb-3 mr-3" src="{{post.image.url}}" alt="Image Description">
+                        <p>{{paragraph}}</p>
+                      </div>
+                  {% endif %}  
+                {% endfor %}
+                 
+                 
+            </div>
+          <!-- End Description -->
+
+          <!-- Tags -->
+          <div class="mb-7">
+           {% for category in post.categories.all %}
+             <a class="u-label u-label--dark u-label--sm mr-2" href="{% url 'category' category.id %}">{{category.name}}</a>
+            {% endfor %}
+          </div>
+          <!-- End Tags -->
+
+          <!-- Social Networks -->
+          <div class="d-flex align-items-center">
+            <h3 class="h6 d-inline-block text-uppercase mr-3 mb-0">Share:</h3>
+
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item mb-2">
+                <a class="u-icon u-icon--secondary u-icon--sm" href="#">
+                  <i class="fab fa-facebook-f u-icon__inner"></i>
+                </a>
+              </li>
+              <li class="list-inline-item mb-2">
+                <a class="u-icon u-icon--secondary u-icon--sm" href="#">
+                  <i class="fab fa-google u-icon__inner"></i>
+                </a>
+              </li>
+              <li class="list-inline-item mb-2">
+                <a class="u-icon u-icon--secondary u-icon--sm" href="#">
+                  <i class="fab fa-twitter u-icon__inner"></i>
+                </a>
+              </li>
+              <li class="list-inline-item mb-2">
+                <a class="u-icon u-icon--secondary u-icon--sm" href="#">
+                  <i class="fab fa-pinterest u-icon__inner"></i>
+                </a>
+              </li>
+              <li class="list-inline-item mb-2">
+                <a class="u-icon u-icon--secondary u-icon--sm" href="#">
+                  <i class="fab fa-get-pocket u-icon__inner"></i>
+                </a>
+              </li>
+              <li class="list-inline-item mb-2">
+                <a class="u-icon u-icon--secondary u-icon--sm" href="#">
+                  <i class="fab fa-telegram-plane u-icon__inner"></i>
+                </a>
+              </li>
+              <li class="list-inline-item mb-2">
+                <a class="u-icon u-icon--secondary u-icon--sm" href="#">
+                  <i class="fab fa-slack-hash u-icon__inner"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <!-- End Social Networks -->
+
+          <hr class="my-8">
+
+          <!-- Author -->
+          <div class="media">
+            <img class="u-lg-avatar rounded-circle mr-4" src="../../assets/img/100x100/img1.jpg" alt="Image Description">
+            <div class="media-body">
+              <h4 class="h5">Maria Muszynska</h4>
+              <p>I am an ambitious workaholic, but apart from that, pretty simple person. Whether it's branding, print, UI + UX I've got you covered. I strive to figure out the right solutions for your look to stand out amongst the rest.</p>
+              <a class="btn btn-sm btn-secondary" href="https://themes.getbootstrap.com/product/space-multipurpose-responsive-template/">All Author Posts</a>
+            </div>
+          </div>
+          <!-- End Author -->
+        </div>
+
+        <div class="col-lg-3 order-lg-2">
+          <!-- Search Input -->
+          <form class="js-focus-state input-group input-group-sm form form--sm mb-7">
+            <input type="text" class="form-control form__input" name="search" placeholder="Buscar" aria-label="Buscar">
+            <span class="input-group-append form__append">
+              <button type="submit" class="btn btn-primary">Ir</button>
+            </span>
+          </form>
+          <!-- End Search Input -->
+
+          <!-- Instagram -->
+          <div class="mb-7">
+            <h3 class="h5 mb-3">Instagram</h3>
+
+            <div class="border rounded p-4">
+              <!-- Instafeed -->
+              <div id="instaFeed" class="js-instagram row mx-gutters-2" data-user-id="4815936096" data-client-id="60648b9247324e87a4d7ab3aa7a58f6c" data-token="4815936096.1677ed0.1cbcaacad4de4ffa96aa15ec76e0e5ce" data-limit="6" data-template="<div class=&quot;col-4 mb-3&quot;><div class=&quot;border rounded p-1&quot;><a href=&quot;{{link}}&quot; target=&quot;_blank&quot;><img class=&quot;img-fluid w-100&quot; src=&quot;{{image}}&quot; /></a></div></div>"></div>
+              <!-- End Instafeed -->
+            </div>
+          </div>
+          <!-- End Instagram -->
+
+          <!-- Recent Posts -->
+          <div class="mb-7">
+            <h3 class="h5 mb-3">Posts recientes</h3>
+
+            <div class="border rounded p-4">
+              <!-- Recent Posts List -->
+              <ul class="list-unstyled">
+                <li class="py-1"><a class="text-secondary" href="#">Remote workers, here's how to dodge distractions</a></li>
+                <li class="dropdown-divider"></li>
+              </ul>
+              <!-- End Recent Posts List -->
+            </div>
+          </div>
+          <!-- End Recent Posts -->
+
+          <!-- Categories -->
+          <div class="mb-7">
+            <h3 class="h5 mb-3">Categorias</h3>
+            <div class="border rounded p-4">
+              <!-- Categories List -->
+              <ul class="list-unstyled">
+               {% for category in post.categories.all %}
+                    <li class="py-1"><a class="text-secondary" href="{% url 'category' category.id %}">{{category.name}}</a></li>
+                   {% if not forloop.last %}<li class="dropdown-divider"></li>{% endif %} 
+                {% endfor %}
+                
+                
+              </ul>
+              <!-- End Categories List -->
+            </div>
+          </div>
+          <!-- End Categories -->
+        </div>
+      </div>
+    </div>
+
+</main>
+{% endblock %}

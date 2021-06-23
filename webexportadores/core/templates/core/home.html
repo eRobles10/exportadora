@@ -11,7 +11,7 @@ Start
          <div class="container">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                <ol class="carousel-indicators">
-                {% for post in posts %}
+                {% for post in news %}
                   <li data-target="#carouselExampleIndicators" class="{% if forloop.counter0 == 0 %}active{% endif %}" data-slide-to="{{forloop.counter0}}"></li>
                 {% endfor %}
                </ol>

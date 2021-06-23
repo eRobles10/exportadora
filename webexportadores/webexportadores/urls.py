@@ -27,8 +27,10 @@ urlpatterns = [
     path('certification/', include('certification.urls')),
     path('process/', include('process.urls')),
     path('admin/', admin.site.urls),
+    path('orders/', include('orders.urls')),
     # paths de autenticacion
-    path('accounts/', include('django.contrib.auth.urls'))
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('registration.urls')),
 ]
 
 

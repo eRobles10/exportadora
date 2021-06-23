@@ -1386,6 +1386,14 @@ input.address_text::placeholder {
     margin-bottom: 4rem !important;
 }
 
+.w-medium {
+    width: 50%;
+}
+
+.l-logout:hover {
+    color: #ddd;
+}
+
 .page-link {
     border: 0px solid #dee2e6;
 }
@@ -1448,4 +1456,48 @@ input.address_text::placeholder {
     align-items: center;
     vertical-align: middle;
     padding: 50px;
+}
+
+.mg-left_rigth_10 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.l-signup:hover {
+    color: #ddd;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .management-bar {
+        background-color: rgb(241, 241, 241);
+    }
+    .manage-header {
+        margin-right: 0px;
+        font-size: 2.25rem;
+    }
+}
+
+.manage-header {
+    font-size: 1.25rem;
+}
+
+.mt-9 {
+    margin-top: 4rem;
+}
+
+.align-left {
+    float: right;
+    width: 200px;
+    padding: 20px;
+}
+
+.align-left p {
+    margin: 0;
+    font-size: smaller;
+}
+
+@media (min-width: 128px) and (max-width: 991px) {
+    .align-left {
+        display: none;
+    }
 }

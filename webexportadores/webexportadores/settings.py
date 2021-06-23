@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'process.apps.ProcessConfig',
     'certification.apps.CertificationConfig',
     'contact',
+    'orders',
 ]
 
 MIDDLEWARE = [
@@ -134,6 +135,9 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
 
+# auth redirects
+#LOGIN_REDIRECT_ULRL = ""
+LOGOUT_REDIRECT_URL = "home"
 
 # CKeditor
 

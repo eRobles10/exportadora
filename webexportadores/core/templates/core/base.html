@@ -48,7 +48,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                <ul class="navbar-nav mr-auto">
                   <li class="nav-item {% if request.path == '/' %}active{% endif %}">
-                     <a class="nav-link" href="{% url 'home' %}">Start</a>
+                     <a class="nav-link" href="{% url 'home' %}">Home</a>
                   </li>
                   <li class="nav-item  {% if request.path == '/about/' %}active{% endif %}">
                      <a class="nav-link" href="{% url 'about' %}">About us</a>
@@ -66,34 +66,62 @@
                      <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
                   </li>
                </ul>
-               <form class="form-inline my-2 my-lg-0">
-                  <div class="search_icon">
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                          Miembros
-                  </button>
-               </form>
+            </div>
+            <div class="navbar align-left">
+                  <p class="">Querétaro, Qro</p>
+                  <p class="">252, Colonia San Francisquito, C.P. 76058</p>
+                  <p class="">+51 4428105252</p>
+                  <p class="">contacto@fvfresh.com</p>
             </div>
          </nav>
       <!-- header section end -->
 
 <!-- User menu-->
 {% if request.user.is_staff %}
+<nav class="navbar navbar-expand-lg navbar-light management-bar">
+
+    <p class="manage-header" href="#"><i>Manage</i></p>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nep" aria-controls="nep" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nep">
+      <ul class="navbar-nav mr-auto">
+       <li class="nav-item">
+          <a class="nav-link" href="{% url 'profile' %}"><i>Profile</i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'create' %}"><i>Create News</i></a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="{% url 'createOrder' %}"><i>Request Order</i></a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="{% url 'orderList' %}"><i>View Orders</i></a>
+        </li>
+      </ul>
+    </div>
+
+</nav>
+{%elif request.user.is_authenticated %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <span class="navbar-brand" href="#"><i>Administrar</i></span>
+    <p class="manage-header" href="#"><i>Manage</i></p>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nep" aria-controls="nep" aria-expanded="false">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="nep">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'create' %}"><i>Crear post</i></a>
+          <a class="nav-link" href="{% url 'profile' %}"><i>Profile</i></a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="{% url 'createOrder' %}"><i>Request Order</i></a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="{% url 'orderList' %}"><i>View Orders</i></a>
         </li>
       </ul>
     </div>
-  </div>
 </nav>
-
 <!--end user Menu-->
 {% endif %}
 <!--Contenido-->
@@ -130,16 +158,33 @@
                   </div>
                </div>
                <div class="col-sm-6 col-md-6 col-lg-3">
-                  <h4 class="footer_taital">News</h4>
-                  <p class="footer_text">Last input</p>
-                  <p class="footer_text">Previous input</p>
-                  <p class="footer_text">Older input</p>
+                  <h4 class="footer_taital">Access</h4>
+                     <div class="footer_menu">
+                        <ul>
+                           {% if not request.user.is_authenticated %}
+                              <li>
+                                 <a class="" href="{% url 'login' %}">Login</a>
+                              </li>
+                              <li>
+                                 <a href="{% url 'signup' %}">Signup</a>
+                              </li>
+                           {% else %}
+                              <li>
+                                 <a  href="{% url 'profile' %}">Profile</a>
+                              </li>
+                              <li>
+                                 <a  href="{% url 'logout' %}">Logout</a>
+                              </li>
+                           {% endif %}
+                        </ul>
+                     </div>
                </div>
                <div class="col-sm-6 col-md-6 col-lg-3">
                   <h4 class="footer_taital">Address</h4>
                   <p class="footer_text">Querétaro, Qro</p>
-                  <p class="footer_text">+01 1234567890</p>
-                  <p class="footer_text">demo@gmail.com</p>
+                  <p class="footer_text">252, Colonia San Francisquito, C.P. 76058</p>
+                  <p class="footer_text">+51 4428105252</p>
+                  <p class="footer_text">contacto@fvfresh.com</p>
                </div>
             </div>
             <div class="footer_section_2">
@@ -155,7 +200,7 @@
                      </div>
                   </div>
                   <div class="col-sm-8 col-md-8 col-lg-9">
-                     <input type="text" class="address_text" placeholder="Enter your Enail" name="text">
+                     <input type="text" class="address_text" placeholder="Enter your Email" name="text">
                      <button type="button" class="get_bt">SUBSCRIBE</button>
                   </div>
                </div>
@@ -170,8 +215,6 @@
          </div>
       </div>
 
-      <!-- copyright section end -->
-      {% include "registration/login.html" %}
 
       <!-- Javascript files-->
       <script src="{% static 'core/js/jquery.min.js' %}"></script>

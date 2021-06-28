@@ -1538,3 +1538,18 @@ input.address_text::placeholder {
 .left-line {
     border-left: #dddddd 1px solid;
 }
+
+.address-center {
+    text-align: center;
+}
+
+.map_size {
+    width: 100%;
+    height: 300px;
+}
+
+.video_cert {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+}

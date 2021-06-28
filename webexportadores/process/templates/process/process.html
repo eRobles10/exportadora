@@ -1,36 +1,47 @@
 {% extends 'core/base.html' %}
+{% load i18n %}
 {% load static %}
 {% block title %}
 Process{% endblock %}
 
 {% block content  %}
 <!-- news section start -->
- <main class="news_section padding_90_top_bottom">
-         <div class="container">
-            <div class="row">
+ <main class="news_section">
+         <div class="row padding_30_top">
+            <div class="container">
                <div class="col-sm-12">
-                  <h1 class="news_taital">Process</h1>
+                  <h1 class="news_taital">{% translate "Process"%}</h1>
                   <p class="news_text"></p>
                </div>
             </div>
-   {% for process in processes %}
             <div class="news_section_2">
-               <div class="row">
-                  <div class="col-md-6">
-                     <div class="news_img"><img src="{{process.image.url}}"></div>
-                  </div>
-                  <div class="col-md-6">
-                     <h1 class="give_taital">{{process.title}}</h1>
-                     <p class="ipsum_text">{{process.content|safe}}
-                     </p>
-                     <div class="donate_btn_main">
-                     <!--<div class="readmore_btn"><a href="#">Ver Más</a></div>-->
+               {% for process in processes %}
+                     <div class="row padding_40_top_bottom  {% if forloop.counter|divisibleby:"2" %}gray-bg{% endif %}">
+                        <div class="container">
+                            <div class="row">
+                              {% if forloop.counter|divisibleby:"2" %}
+                                 <div class="col-md-6">
+                                    <div class="news_img"><img src="{{process.image.url}}"></div>
+                                 </div>
+                                 <div class="col-md-6 left-line">
+                                    <h1 class="give_taital">{{process.title}}</h1>
+                                    <p class="ipsum_text">{{process.content|safe}}</p>
+                                 </div>
+                              {%else%}
+                                 <div class="col-md-6 right-line ">
+                                    <h1 class="give_taital">{{process.title}}</h1>
+                                    <p class="ipsum_text">{{process.content|safe}}</p>
+                                 </div>
+                                 <div class="col-md-6">
+                                    <div class="news_img"><img src="{{process.image.url}}"></div>
+                                 </div>
+                               {% endif %}
+                           </div>
+                        </div>
                      </div>
-                  </div>
-               </div>
+               {% endfor %}
             </div>
          </div>
-      {% endfor %}
-       </main>
-      <!-- news section end -->
+   </main>
+    <!-- Process section end -->
 {% endblock  %}

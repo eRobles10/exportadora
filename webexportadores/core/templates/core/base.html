@@ -2,7 +2,7 @@
 {% load i18n %}
 <!DOCTYPE html>
 {% load static %}
-
+{% load convert_paths %}
 <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
 <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
 <html lang="es">
@@ -50,19 +50,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item {% if request.path == '/' %}active{% endif %}">
+                  <li class="nav-item {% if request.path|slice:"3:5"  == '/' %}active{% endif %}">
                      <a class="nav-link" href="{% url 'home' %}">{% translate "Home" %}</a>
                   </li>
-                  <li class="nav-item  {% if request.path == '/about/' %}active{% endif %}">
+                  <li class="nav-item  {% if request.path|slice:"3:10" == '/about/' %}active{% endif %}">
                      <a class="nav-link" href="{% url 'about' %}">{% translate "About us" %}</a>
                   </li>
-                  <li class="nav-item {% if request.path == '/certification/' %}active{% endif %}">
+                  <li class="nav-item {% if request.path|slice:"3:18" == '/certification/' %}active{% endif %}">
                      <a class="nav-link" href="{% url 'certification' %}">{% translate "Certification" %}</a>
                   </li>
-                  <li class="nav-item {% if request.path == '/process/' %}active{% endif %}">
+                  <li class="nav-item {% if request.path|slice:"3:12" == '/process/' %}active{% endif %}">
                      <a class="nav-link" href="{% url 'process' %}">{% translate "Process" %}</a>
                   </li>
-                  <li class="nav-item {% if request.path|slice:":6" == '/contact/' %}active{% endif %}">
+                  <li class="nav-item {% if request.path|slice:"3:12" == '/contact/' %}active{% endif %}">
                      <a class="nav-link" href="{% url 'contact' %}">{% translate "Contact us" %}</a>
                   </li>
                </ul>
@@ -70,14 +70,15 @@
             <div class=" ">
                <div class="dropdown">
                   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                     Languaje
+                     {% translate "Languaje"%}
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+
                      {% get_current_language  as LANGUAGE_CODE%}
                      {% get_available_languages as LANGUAGES %}
                      {% get_language_info_list for LANGUAGES as languages %}
                      {% for lang in languages %}
-                        <li><a class="dropdown-item" href="/{{lang.code}}/">{{lang.name_local}}</a></li>
+                        <li><a class="dropdown-item" href="/{{lang.code}}{% redefine_path request.path%}">{{lang.name_local}}</a></li>
                      {% endfor %}
                   </ul>
                </div>
@@ -226,15 +227,15 @@
 
       <!-- Javascript files-->
       <script src="{% static 'core/js/jquery.min.js' %}"></script>
+      <script src="{% static 'core/js/jquery-3.0.0.min.js' %}"></script>
       <script src="{% static 'core/js/popper.min.js' %}"></script>
       <script src="{% static 'core/js/bootstrap.bundle.min.js' %}"></script>
-      <script src="{% static 'core/js/jquery-3.0.0.min.js' %}"></script>
       <script src="{% static 'core/js/plugin.js' %}"></script>
       <!-- sidebar -->
       <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
       <script src="{% static 'js/custom.js' %}"></script>
       <!-- javascript -->
-      <script src="{% static 'core/js/owl.carousel.js' %}"></script>
+      <script src="{% static 'js/owl.carousel.js' %}"></script>
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 </body>
 </html>

@@ -239,6 +239,10 @@ button {
     padding-bottom: 30px;
 }
 
+.padding_30_top {
+    padding-top: 30px;
+}
+
 .logo {
     width: 145px;
     height: 115px;
@@ -721,7 +725,6 @@ button.donate_btn {
 .news_section_2 {
     width: 100%;
     float: left;
-    padding-top: 40px;
 }
 
 .give_taital {
@@ -1514,4 +1517,16 @@ input.address_text::placeholder {
 
 .news_img img {
     max-height: 400px;
+}
+
+.gray-bg {
+    background-color: #f3f3f3;
+}
+
+.right-line {
+    border-right: #ebebeb 1px solid;
+}
+
+.left-line {
+    border-left: #dddddd 1px solid;
 }

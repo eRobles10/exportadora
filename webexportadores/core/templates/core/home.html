@@ -15,7 +15,7 @@ Start
                   <h2 class="about_taital">{%translate 'About us'%}...</h2>
                   <p class="about_text">{{about.content}}
                   </p>
-                  <div class="readmore_bt"><a href="{% url 'about' %}">Read More</a></div>
+                  <div class="readmore_bt"><a href="{% url 'about' %}">{% translate "Read More"%}</a></div>
                </div>
                <div class="col-sm-6">
                   <div class="video_container"><video  controls>
@@ -29,7 +29,7 @@ Start
       <!-- banner section end -->
 
         <!-- about section start -->
-      <div class="about_section layout_padding">
+      <div class="about_section padding_40_top_bottom">
           <div class="container">
 
             <div class="news_section_2">
@@ -42,7 +42,7 @@ Start
                      <p class="ipsum_text">{{process_intro.content|safe}}
                      </p>
                       <div class="donate_btn_main">
-                        <div class="readmore_btn"><a href="{% url 'process' %}">Read More</a></div>
+                        <div class="readmore_btn"><a href="{% url 'process' %}">{% translate "Read More"%}</a></div>
                      </div>
                   </div>
                </div>
@@ -52,7 +52,7 @@ Start
       <!-- about section end -->
 
       <!-- events section start -->
-      <div class="events_section layout_padding">
+      <div class="events_section padding_40_top_bottom">
          <div class="container">
             <div class="row">
                <div class="col-sm-12">
@@ -73,7 +73,7 @@ Start
                      <h1 class="give_taital_1">{{certification.title}}</h1>
                      <p class="ipsum_text_1">{{certification.content}}</p>
                      <div class="donate_btn_main">
-                        <div class="readmore_btn"><a href="{% url 'process' %}">Read More</a></div>
+                        <div class="readmore_btn"><a href="{% url 'process' %}">{% translate "Read More"%}</a></div>
                      </div>
                   </div>
                </div>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-28 02:46+0000\n"
+"POT-Creation-Date: 2021-06-28 06:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -40,11 +40,18 @@ msgstr "Procesos"
 msgid "Contact us"
 msgstr "Contactanos"
 
+#: core/templates/core/home.html:18 core/templates/core/home.html:45
+#: core/templates/core/home.html:76
+msgid "Read More"
+msgstr "Ver Mas"
+
 #: core/templates/core/home.html:60
 msgid ""
 "Our business is certified, and here you can see how our process are "
 "validated."
-msgstr "Nuestro negocio está certificado, aqui puedes ver cuales son nuestros procesos."
+msgstr ""
+"Nuestro negocio está certificado, aqui puedes ver cuales son nuestros "
+"procesos."
 
 #: webexportadores/settings.py:140
 msgid "English"

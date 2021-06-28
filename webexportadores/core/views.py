@@ -6,8 +6,6 @@ from about.models import About
 from django.shortcuts import get_object_or_404
 from django.views.generic.base import TemplateView
 from django.shortcuts import render
-from django.utils.translation import gettext as _
-from django.utils.translation import get_language, activate, gettext
 # Create your views here.
 """
 Inicio

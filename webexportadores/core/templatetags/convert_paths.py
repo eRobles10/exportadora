@@ -7,5 +7,5 @@ register = template.Library()
 @register.simple_tag
 def redefine_path(content):
     result = content.replace("es/", "")
-    result = content.replace("en/", "")
-    return result + ""
+    result = result.replace("en/", "")
+    return result

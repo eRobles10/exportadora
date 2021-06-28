@@ -243,6 +243,14 @@ button {
     padding-top: 30px;
 }
 
+.padding_30_right {
+    padding-right: 30px;
+}
+
+.padding_30_left {
+    padding-left: 30px;
+}
+
 .logo {
     width: 145px;
     height: 115px;

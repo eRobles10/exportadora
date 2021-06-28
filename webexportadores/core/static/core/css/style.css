@@ -217,7 +217,7 @@ button {
 }
 
 .layout_padding {
-    padding-top: 90px;
+    padding-top: 45px;
     padding-bottom: 0px;
 }
 
@@ -232,6 +232,11 @@ button {
 
 .padding_90_bottom {
     padding-bottom: 90px;
+}
+
+.padding_40_top_bottom {
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .logo {
@@ -544,13 +549,12 @@ button.donate_btn {
     font-size: 16px;
     margin: 0px;
     color: #ffffff;
-    padding: 50px 0px;
+    padding: 20px 0px;
 }
 
 .readmore_bt {
     width: 150px;
     float: left;
-    margin-top: 20px;
 }
 
 .readmore_bt a {
@@ -933,6 +937,7 @@ button.donate_btn {
 
 .client_img {
     width: 100%;
+    padding-right: 15px;
 }
 
 .client_name_text {
@@ -1455,7 +1460,12 @@ input.address_text::placeholder {
 .video_container {
     align-items: center;
     vertical-align: middle;
-    padding: 50px;
+    padding: 10px;
+    padding-top: 30px;
+}
+
+.video_container video {
+    width: 100%;
 }
 
 .mg-left_rigth_10 {
@@ -1500,4 +1510,8 @@ input.address_text::placeholder {
     .align-left {
         display: none;
     }
+}
+
+.news_img img {
+    max-height: 400px;
 }

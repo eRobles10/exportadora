@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-28 02:46+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: core/templates/core/base.html:54 core/templates/core/base.html:152
+msgid "Home"
+msgstr ""
+
+#: core/templates/core/base.html:57 core/templates/core/base.html:153
+#: core/templates/core/home.html:15
+msgid "About us"
+msgstr "Nosotros"
+
+#: core/templates/core/base.html:60 core/templates/core/base.html:154
+#: core/templates/core/home.html:59
+msgid "Certification"
+msgstr "Certificados"
+
+#: core/templates/core/base.html:63 core/templates/core/base.html:161
+msgid "Process"
+msgstr "Procesos"
+
+#: core/templates/core/base.html:66 core/templates/core/base.html:162
+msgid "Contact us"
+msgstr "Contactanos"
+
+#: core/templates/core/home.html:60
+msgid ""
+"Our business is certified, and here you can see how our process are "
+"validated."
+msgstr "Nuestro negocio está certificado, aqui puedes ver cuales son nuestros procesos."
+
+#: webexportadores/settings.py:140
+msgid "English"
+msgstr ""
+
+#: webexportadores/settings.py:141
+msgid "Spanish"
+msgstr "Español"

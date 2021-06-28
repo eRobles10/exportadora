@@ -6,6 +6,8 @@ from about.models import About
 from django.shortcuts import get_object_or_404
 from django.views.generic.base import TemplateView
 from django.shortcuts import render
+from django.utils.translation import gettext as _
+from django.utils.translation import get_language, activate, gettext
 # Create your views here.
 """
 Inicio
@@ -21,17 +23,19 @@ Servicios
 class HomePageView(TemplateView):
 
     template_name = "core/home.html"
-    news = Post.objects.all().order_by('-created')[:5]
+    news = ""
     certification = get_object_or_404(Certification, order=0)
-    process_intro = Process.objects.get()
+    process_intro = get_object_or_404(Process, pk=1)
+    """Process.objects.get()"""
     about = get_object_or_404(About, order=0)
 
     def get(self, request, **kwargs):
 
-        return render(request, self.template_name, {'news': self.news,
-                                                    'certification': self.certification,
-                                                    'service_intro': self.process_intro,
-                                                    'about': self.about})
+        return render(request,
+                      self.template_name, {'news': self.news,
+                                           'certification': self.certification,
+                                           'process_intro': self.process_intro,
+                                           'about': self.about})
 
 
 def contact(request):

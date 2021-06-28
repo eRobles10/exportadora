@@ -1,4 +1,5 @@
 {% extends 'core/base.html' %}
+{% load i18n %}
 {%load static%}
 {% block title %}
 Start
@@ -7,44 +8,16 @@ Start
 
 {% block content  %}
 <!-- banner section start -->
-      <div class="banner_section padding_90_top_bottom">
-         <div class="container">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-               <ol class="carousel-indicators">
-                {% for post in news %}
-                  <li data-target="#carouselExampleIndicators" class="{% if forloop.counter0 == 0 %}active{% endif %}" data-slide-to="{{forloop.counter0}}"></li>
-                {% endfor %}
-               </ol>
-               <div class="carousel-inner">
-                  {% for post in posts %}
-                     <div class="carousel-item {% if forloop.counter0 == 0 %}active{% endif %}">
-                        <div class="row">
-                           <div class="col-sm-12">
-                              <h1 class="banner_taital">{{post.title}}</h1>
-                              <p class="banner_text">{{post.intro}} </p>
-                              <div class="read_bt"><a href="{% url 'post' post.id %}">Read More</a></div>
-                           </div>
-                        </div>
-                     </div>
-                  {% endfor %}
-               </div>
-            </div>
-         </div>
-      </div>
-      </div>
-      <!-- banner section end -->
-
-        <!-- about section start -->
-      <div class="about_section layout_padding">
-         <div class="container">
+      <div class="banner_section padding_40_top_bottom">
+          <div class="container">
             <div class="row">
-               <div class="col-sm-4">
-                  <h2 class="about_taital">About us...</h2>
+               <div class="col-sm-6">
+                  <h2 class="about_taital">{%translate 'About us'%}...</h2>
                   <p class="about_text">{{about.content}}
                   </p>
                   <div class="readmore_bt"><a href="{% url 'about' %}">Read More</a></div>
                </div>
-               <div class="col-sm-8">
+               <div class="col-sm-6">
                   <div class="video_container"><video  controls>
                         <source src="{{ about.videofile.url }}" type='video/mp4'>
                         Your browser does not support the video tag.
@@ -53,25 +26,20 @@ Start
             </div>
          </div>
       </div>
-      <!-- about section end -->
+      <!-- banner section end -->
 
-      <!-- news section start -->
-      <div class="news_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-sm-12">
-                  <h1 class="news_taital">Process</h1>
-                  <p class="news_text">This is how we make sure our products stands to the highest quality.</p>
-               </div>
-            </div>
+        <!-- about section start -->
+      <div class="about_section layout_padding">
+          <div class="container">
+
             <div class="news_section_2">
                <div class="row">
                   <div class="col-md-6">
-                     <div class="news_img"><img src="{{service_intro.image.url}}"></div>
+                     <div class="news_img"><img src="{{process_intro.image.url}}"></div>
                   </div>
                   <div class="col-md-6">
-                     <h1 class="give_taital">{{service_intro.title|safe}}</h1>
-                     <p class="ipsum_text">{{service_intro.content|safe}}   available, but the majority have suffered alteration in some form, by injected humour, or randomised
+                     <h1 class="give_taital">{{process_intro.title|safe}}</h1>
+                     <p class="ipsum_text">{{process_intro.content|safe}}
                      </p>
                       <div class="donate_btn_main">
                         <div class="readmore_btn"><a href="{% url 'process' %}">Read More</a></div>
@@ -81,15 +49,15 @@ Start
             </div>
          </div>
       </div>
-      <!-- news section end -->
+      <!-- about section end -->
 
       <!-- events section start -->
       <div class="events_section layout_padding">
          <div class="container">
             <div class="row">
                <div class="col-sm-12">
-                  <h1 class="news_taital">Certification</h1>
-                   <p class="news_text">Our business is certified, and here you can see how our process are validated. </p>
+                  <h1 class="news_taital">{% translate "Certification" %}</h1>
+                   <p class="news_text">{% translate "Our business is certified, and here you can see how our process are validated." %}</p>
                </div>
             </div>
             <div class="events_section_2">
@@ -123,28 +91,28 @@ Start
                   <div class="carousel-inner">
                      <div class="carousel-item active">
                         <div class="donate_left">
-                           <div class="client_img"><img src="{% static 'core/images/client-img.png' %}"></div>
+                           <div class="client_img"><img src="{% static 'core/images/img_avatar.png' %}"></div>
                         </div>
                         <div class="donate_right">
-                           <h3 class="client_name_text">Mardo Merk</h3>
+                           <h3 class="client_name_text">Tadeo Resendiz</h3>
                            <p class="dummy_text">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefinedIf you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
                         </div>
                      </div>
                      <div class="carousel-item">
                         <div class="donate_left">
-                           <div class="client_img"><img src="{% static 'core/images/client-img.png' %}"></div>
+                           <div class="client_img"><img src="{% static 'core/images/img_avatar.png' %}"></div>
                         </div>
                         <div class="donate_right">
-                           <h3 class="client_name_text">Mardo Merk</h3>
+                           <h3 class="client_name_text">Juan Perez</h3>
                            <p class="dummy_text">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefinedIf you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
                         </div>
                      </div>
                      <div class="carousel-item">
                         <div class="donate_left">
-                           <div class="client_img"><img src="{% static 'core/images/client-img.png' %}"></div>
+                           <div class="client_img"><img src="{% static 'core/images/img_avatar.png' %}"></div>
                         </div>
                         <div class="donate_right">
-                           <h3 class="client_name_text">Mardo Merk</h3>
+                           <h3 class="client_name_text">Pedro Hernandez</h3>
                            <p class="dummy_text">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefinedIf you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
                         </div>
                      </div>

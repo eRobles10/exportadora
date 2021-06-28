@@ -24,4 +24,4 @@ class Certification(models.Model):
         ordering = ["order"]
 
     def __str__(self):
-        return self.title
+        return str(self.title)

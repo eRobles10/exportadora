@@ -8,3 +8,4 @@ class Profile(models.Model):
     name = models.TextField(null=True, blank=True)
     rfc = models.TextField(max_length=50, null=True, blank=True)
     phone = models.TextField(max_length=20, null=True, blank=True)
+    address = models.TextField(max_length=20, null=True, blank=True)

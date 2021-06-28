@@ -1,5 +1,8 @@
+
+{% load i18n %}
 <!DOCTYPE html>
 {% load static %}
+
 <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
 <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
 <html lang="es">
@@ -48,30 +51,36 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                <ul class="navbar-nav mr-auto">
                   <li class="nav-item {% if request.path == '/' %}active{% endif %}">
-                     <a class="nav-link" href="{% url 'home' %}">Home</a>
+                     <a class="nav-link" href="{% url 'home' %}">{% translate "Home" %}</a>
                   </li>
                   <li class="nav-item  {% if request.path == '/about/' %}active{% endif %}">
-                     <a class="nav-link" href="{% url 'about' %}">About us</a>
+                     <a class="nav-link" href="{% url 'about' %}">{% translate "About us" %}</a>
                   </li>
                   <li class="nav-item {% if request.path == '/certification/' %}active{% endif %}">
-                     <a class="nav-link" href="{% url 'certification' %}">Certification</a>
+                     <a class="nav-link" href="{% url 'certification' %}">{% translate "Certification" %}</a>
                   </li>
                   <li class="nav-item {% if request.path == '/process/' %}active{% endif %}">
-                     <a class="nav-link" href="{% url 'process' %}">Process</a>
-                  </li>
-                  <li class="nav-item {% if request.path == '/news/' %}active{% endif %}">
-                     <a class="nav-link" href="{% url 'news' %}">News</a>
+                     <a class="nav-link" href="{% url 'process' %}">{% translate "Process" %}</a>
                   </li>
                   <li class="nav-item {% if request.path|slice:":6" == '/contact/' %}active{% endif %}">
-                     <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
+                     <a class="nav-link" href="{% url 'contact' %}">{% translate "Contact us" %}</a>
                   </li>
                </ul>
             </div>
-            <div class="navbar align-left">
-                  <p class="">Querétaro, Qro</p>
-                  <p class="">252, Colonia San Francisquito, C.P. 76058</p>
-                  <p class="">+51 4428105252</p>
-                  <p class="">contacto@fvfresh.com</p>
+            <div class=" ">
+               <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                     Languaje
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                     {% get_current_language  as LANGUAGE_CODE%}
+                     {% get_available_languages as LANGUAGES %}
+                     {% get_language_info_list for LANGUAGES as languages %}
+                     {% for lang in languages %}
+                        <li><a class="dropdown-item" href="/{{lang.code}}/">{{lang.name_local}}</a></li>
+                     {% endfor %}
+                  </ul>
+               </div>
             </div>
          </nav>
       <!-- header section end -->
@@ -140,18 +149,17 @@
                      <div class="footer_menu_left">
                         <div class="footer_menu">
                            <ul>
-                              <li><a href="{% url 'home' %}">Start</a></li>
-                              <li><a href="{% url 'about' %}">About us</a></li>
-                              <li><a href="{% url 'certification' %}">Certification</a></li>
+                              <li><a href="{% url 'home' %}">{% translate "Home"%}</a></li>
+                              <li><a href="{% url 'about' %}">{%  translate "About us" %}</a></li>
+                              <li><a href="{% url 'certification' %}">{% translate "Certification" %}</a></li>
                            </ul>
                         </div>
                      </div>
                      <div class="footer_menu_right">
                         <div class="footer_menu">
                            <ul>
-                              <li><a href="{% url 'process' %}">Process</a></li>
-                              <li><a href="{% url 'news' %}">News</a></li>
-                              <li><a href="{% url 'contact' %}">Contact</a></li>
+                              <li><a href="{% url 'process' %}">{%translate "Process"%}</a></li>
+                              <li><a href="{% url 'contact' %}">{% translate "Contact us"%}</a></li>
                            </ul>
                         </div>
                      </div>
@@ -226,7 +234,7 @@
       <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
       <script src="{% static 'js/custom.js' %}"></script>
       <!-- javascript -->
-      <script src="{% static 'js/owl.carousel.js' %}"></script>
+      <script src="{% static 'core/js/owl.carousel.js' %}"></script>
       <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 </body>
 </html>

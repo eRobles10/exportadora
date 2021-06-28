@@ -6,7 +6,7 @@ from .models import Certification
 
 class CertificationAdmin(admin.ModelAdmin):
     readonly_fields = ('created', 'updated')
-    list_display = ('title', 'order')
+    list_display = (str('title'), 'order')
 
 
 admin.site.register(Certification, CertificationAdmin)

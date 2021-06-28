@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
     # Django JET URLS
@@ -32,6 +33,21 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('registration.urls')),
 ]
+
+urlpatterns += i18n_patterns(
+    # Django JET URLS
+    #path('jet/', include('jet.urls', 'jet')),
+    # paths core
+    path('', include('core.urls')),
+    path('news/', include('news.urls')),
+    path('about/', include('about.urls')),
+    path('certification/', include('certification.urls')),
+    path('process/', include('process.urls')),
+    path('orders/', include('orders.urls')),
+    # paths de autenticacion
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('registration.urls')),
+)
 
 
 if settings.DEBUG:

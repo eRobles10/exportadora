@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-29 06:06+0000\n"
+"POT-Creation-Date: 2021-07-01 16:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,26 +18,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: core/templates/core/base.html:55 core/templates/core/base.html:154
+#: core/templates/core/base.html:55 core/templates/core/base.html:151
 msgid "Home"
 msgstr ""
 
-#: core/templates/core/base.html:58 core/templates/core/base.html:155
+#: core/templates/core/base.html:58 core/templates/core/base.html:152
 #: core/templates/core/home.html:15
 msgid "About us"
 msgstr "Nosotros"
 
-#: core/templates/core/base.html:61 core/templates/core/base.html:156
+#: core/templates/core/base.html:61 core/templates/core/base.html:153
 #: core/templates/core/home.html:59
 msgid "Certification"
 msgstr "Certificados"
 
-#: core/templates/core/base.html:64 core/templates/core/base.html:163
+#: core/templates/core/base.html:64 core/templates/core/base.html:160
 #: process/templates/process/process.html:13
 msgid "Process"
 msgstr "Procesos"
 
-#: core/templates/core/base.html:67 core/templates/core/base.html:164
+#: core/templates/core/base.html:67 core/templates/core/base.html:161
 msgid "Contact us"
 msgstr "Contactanos"
 
@@ -45,15 +45,15 @@ msgstr "Contactanos"
 msgid "Language"
 msgstr "Idioma"
 
-#: core/templates/core/base.html:149
+#: core/templates/core/base.html:146
 msgid "NAVIGATION"
 msgstr "Navegacion"
 
-#: core/templates/core/base.html:171
+#: core/templates/core/base.html:168
 msgid "Access"
 msgstr "Acceso"
 
-#: core/templates/core/base.html:193
+#: core/templates/core/base.html:190
 msgid "Address"
 msgstr "Direccion"
 
@@ -95,6 +95,7 @@ msgid "We will give you an answer as soon as we can."
 msgstr "Te daremos una respuesta tan pronto como podamos"
 
 #: core/templates/core/home.html:18 core/templates/core/home.html:45
+#: core/templates/core/home.html:83
 msgid "Read More"
 msgstr "Ver Mas"
 
@@ -105,6 +106,10 @@ msgid ""
 msgstr ""
 "Nuestro negocio está certificado, aqui puedes ver cuales son nuestros "
 "procesos."
+
+#: core/templates/core/home.html:95
+msgid "Our Principles"
+msgstr "Nuestros Principios"
 
 #: webexportadores/settings.py:141
 msgid "English"

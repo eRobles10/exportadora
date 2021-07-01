@@ -18,7 +18,7 @@ class About(models.Model):
     active = models.BooleanField(verbose_name="Activo", blank=True, null=True)
     order = models.SmallIntegerField(verbose_name="Orden", default=0)
     videofile = models.FileField(
-        upload_to='videos', null=True, verbose_name="")
+        upload_to='videos', null=True, blank=True, verbose_name="Video upload")
 
     class Meta:
         verbose_name = "Acerca De"

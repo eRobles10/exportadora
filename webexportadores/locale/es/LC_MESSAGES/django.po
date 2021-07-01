@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-28 06:06+0000\n"
+"POT-Creation-Date: 2021-06-29 06:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,30 +18,83 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: core/templates/core/base.html:54 core/templates/core/base.html:152
+#: core/templates/core/base.html:55 core/templates/core/base.html:154
 msgid "Home"
 msgstr ""
 
-#: core/templates/core/base.html:57 core/templates/core/base.html:153
+#: core/templates/core/base.html:58 core/templates/core/base.html:155
 #: core/templates/core/home.html:15
 msgid "About us"
 msgstr "Nosotros"
 
-#: core/templates/core/base.html:60 core/templates/core/base.html:154
+#: core/templates/core/base.html:61 core/templates/core/base.html:156
 #: core/templates/core/home.html:59
 msgid "Certification"
 msgstr "Certificados"
 
-#: core/templates/core/base.html:63 core/templates/core/base.html:161
+#: core/templates/core/base.html:64 core/templates/core/base.html:163
+#: process/templates/process/process.html:13
 msgid "Process"
 msgstr "Procesos"
 
-#: core/templates/core/base.html:66 core/templates/core/base.html:162
+#: core/templates/core/base.html:67 core/templates/core/base.html:164
 msgid "Contact us"
 msgstr "Contactanos"
 
+#: core/templates/core/base.html:74
+msgid "Language"
+msgstr "Idioma"
+
+#: core/templates/core/base.html:149
+msgid "NAVIGATION"
+msgstr "Navegacion"
+
+#: core/templates/core/base.html:171
+msgid "Access"
+msgstr "Acceso"
+
+#: core/templates/core/base.html:193
+msgid "Address"
+msgstr "Direccion"
+
+#: core/templates/core/contact.html:34
+msgid "Leave us a message"
+msgstr "Dejanos un mensaje"
+
+#: core/templates/core/contact.html:35
+msgid "We want to hear you!!"
+msgstr "Queremos escucharte!!"
+
+#: core/templates/core/contact.html:36
+msgid "Do you have any question?, Do you want to talk with us?, Contact us!."
+msgstr ""
+"Tienes alguna pregunta?, Quieres comunicarte con nosotros?, Contactanos!."
+
+#: core/templates/core/contact.html:47
+msgid "Your Name"
+msgstr "Nombre"
+
+#: core/templates/core/contact.html:69
+msgid "Subject"
+msgstr "Asunto"
+
+#: core/templates/core/contact.html:79
+msgid "Phone number"
+msgstr "Telefono"
+
+#: core/templates/core/contact.html:89
+msgid "How we can help you?"
+msgstr "Como te podemos ayudar?"
+
+#: core/templates/core/contact.html:95
+msgid "Send"
+msgstr "Enviar"
+
+#: core/templates/core/contact.html:96
+msgid "We will give you an answer as soon as we can."
+msgstr "Te daremos una respuesta tan pronto como podamos"
+
 #: core/templates/core/home.html:18 core/templates/core/home.html:45
-#: core/templates/core/home.html:76
 msgid "Read More"
 msgstr "Ver Mas"
 
@@ -53,10 +106,10 @@ msgstr ""
 "Nuestro negocio está certificado, aqui puedes ver cuales son nuestros "
 "procesos."
 
-#: webexportadores/settings.py:140
+#: webexportadores/settings.py:141
 msgid "English"
 msgstr ""
 
-#: webexportadores/settings.py:141
+#: webexportadores/settings.py:142
 msgid "Spanish"
 msgstr "Español"

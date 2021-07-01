@@ -1,5 +1,5 @@
 {% extends 'core/base.html' %}
-
+{% load i18n %}
 {% block title %}
 Contact us
 {% endblock %}
@@ -31,9 +31,9 @@ Contact us
 <div class="container space-2 space-3--lg">
       <!-- Title -->
       <div class="w-md-80 w-lg-60 text-center mx-md-auto mb-9">
-        <span class=" alert alert-primary  mb-3">Leave us a message</span>
-        <h2 class="title-padding h3">We want to hear you!!</h2>
-        <p>Do you have any question?, Do you want to talk with us?, Contact us!.</p>
+        <span class=" alert alert-primary  mb-3">{% translate "Leave us a message"%}</span>
+        <h2 class="title-padding h3">{% translate "We want to hear you!!"%}</h2>
+        <p>{% translate "Do you have any question?, Do you want to talk with us?, Contact us!."%}</p>
       </div>
       <!-- End Title -->
 
@@ -44,7 +44,7 @@ Contact us
             <div class="col-sm-6 mb-6">
               <div class="form-message">
                 <div class="input-group ">
-                  <input class="form-control " type="text" name="name" required="" placeholder="Your Name" aria-label="Your name" data-msg="Please type your name." data-error-class="u-has-error" data-success-class="u-has-success">
+                  <input class="form-control " type="text" name="name" required="" placeholder="{% translate "Your Name"%}" aria-label="Your name" data-msg="Please type your name." data-error-class="u-has-error" data-success-class="u-has-success">
                 </div>
               </div>
             </div>
@@ -66,7 +66,7 @@ Contact us
             <div class="col-sm-6 mb-6">
               <div class="form-message">
                 <div class="input-group ">
-                  <input class="form-control " type="text" name="subject" required="" placeholder="Subject" aria-label="Subject" data-msg="TYpe a subject." data-error-class="u-has-error" data-success-class="u-has-success">
+                  <input class="form-control " type="text" name="subject" required="" placeholder="{% translate "Subject"%}" aria-label="Subject" data-msg="TYpe a subject." data-error-class="u-has-error" data-success-class="u-has-success">
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@ Contact us
             <div class="col-sm-6 mb-6">
               <div class="form-message">
                 <div class=" input-group ">
-                  <input class="form-control " type="number" name="phone" required="" placeholder="Phone number" aria-label="Your phone number" data-msg="Please leave your phone." data-error-class="u-has-error" data-success-class="u-has-success">
+                  <input class="form-control " type="number" name="phone" required="" placeholder="{% translate "Phone number"%}" aria-label="Your phone number" data-msg="Please leave your phone." data-error-class="u-has-error" data-success-class="u-has-success">
                 </div>
               </div>
             </div>
@@ -86,14 +86,14 @@ Contact us
           <!-- Input -->
           <div class="js-form-message mb-9">
             <div class="input-group form">
-              <textarea class="form-control " rows="6" name="text" required="" placeholder="How we can help you?" aria-label="How can we help you?" data-msg="Please let us know why you want to contact us." data-error-class="u-has-error" data-success-class="u-has-success"></textarea>
+              <textarea class="form-control " rows="6" name="text" required="" placeholder="{% translate "How we can help you?"%}" aria-label="How can we help you?" data-msg="Please let us know why you want to contact us." data-error-class="u-has-error" data-success-class="u-has-success"></textarea>
             </div>
           </div>
           <!-- End Input -->
 
           <div class="text-center">
-            <button type="submit" class="btn btn-primary btn-wide mb-4">Send</button>
-            <p class="small">We will give you an answer as soon as we can.</p>
+            <button type="submit" class="btn btn-primary btn-wide mb-4">{% translate "Send"%}</button>
+            <p class="small">{% translate "We will give you an answer as soon as we can."%}</p>
           </div>
         </form>
       </div>

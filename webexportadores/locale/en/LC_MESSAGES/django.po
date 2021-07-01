@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-28 06:06+0000\n"
+"POT-Creation-Date: 2021-06-29 06:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,30 +18,82 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: core/templates/core/base.html:54 core/templates/core/base.html:152
+#: core/templates/core/base.html:55 core/templates/core/base.html:154
 msgid "Home"
 msgstr ""
 
-#: core/templates/core/base.html:57 core/templates/core/base.html:153
+#: core/templates/core/base.html:58 core/templates/core/base.html:155
 #: core/templates/core/home.html:15
 msgid "About us"
 msgstr ""
 
-#: core/templates/core/base.html:60 core/templates/core/base.html:154
+#: core/templates/core/base.html:61 core/templates/core/base.html:156
 #: core/templates/core/home.html:59
 msgid "Certification"
 msgstr ""
 
-#: core/templates/core/base.html:63 core/templates/core/base.html:161
+#: core/templates/core/base.html:64 core/templates/core/base.html:163
+#: process/templates/process/process.html:13
 msgid "Process"
 msgstr ""
 
-#: core/templates/core/base.html:66 core/templates/core/base.html:162
+#: core/templates/core/base.html:67 core/templates/core/base.html:164
 msgid "Contact us"
 msgstr ""
 
+#: core/templates/core/base.html:74
+msgid "Language"
+msgstr ""
+
+#: core/templates/core/base.html:149
+msgid "NAVIGATION"
+msgstr ""
+
+#: core/templates/core/base.html:171
+msgid "Access"
+msgstr ""
+
+#: core/templates/core/base.html:193
+msgid "Address"
+msgstr ""
+
+#: core/templates/core/contact.html:34
+msgid "Leave us a message"
+msgstr ""
+
+#: core/templates/core/contact.html:35
+msgid "We want to hear you!!"
+msgstr ""
+
+#: core/templates/core/contact.html:36
+msgid "Do you have any question?, Do you want to talk with us?, Contact us!."
+msgstr ""
+
+#: core/templates/core/contact.html:47
+msgid "Your Name"
+msgstr ""
+
+#: core/templates/core/contact.html:69
+msgid "Subject"
+msgstr ""
+
+#: core/templates/core/contact.html:79
+msgid "Phone number"
+msgstr ""
+
+#: core/templates/core/contact.html:89
+msgid "How we can help you?"
+msgstr ""
+
+#: core/templates/core/contact.html:95
+msgid "Send"
+msgstr ""
+
+#: core/templates/core/contact.html:96
+msgid "We will give you an answer as soon as we can."
+msgstr ""
+
 #: core/templates/core/home.html:18 core/templates/core/home.html:45
-#: core/templates/core/home.html:76
 msgid "Read More"
 msgstr ""
 
@@ -51,10 +103,10 @@ msgid ""
 "validated."
 msgstr ""
 
-#: webexportadores/settings.py:140
+#: webexportadores/settings.py:141
 msgid "English"
 msgstr ""
 
-#: webexportadores/settings.py:141
+#: webexportadores/settings.py:142
 msgid "Spanish"
 msgstr ""

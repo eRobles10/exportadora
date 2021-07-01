@@ -71,7 +71,7 @@
             <div class="padding_30_right">
                <div class="dropdown">
                   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {% translate "Languaje"%}
+                    {% translate "Language"%}
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                      {% get_current_language  as LANGUAGE_CODE%}
@@ -100,14 +100,11 @@
        <li class="nav-item">
           <a class="nav-link" href="{% url 'profile' %}"><i>Profile</i></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'create' %}"><i>Create News</i></a>
-        </li>
          <li class="nav-item">
           <a class="nav-link" href="{% url 'createOrder' %}"><i>Request Order</i></a>
         </li>
          <li class="nav-item">
-          <a class="nav-link" href="{% url 'orderList' %}"><i>View Orders</i></a>
+          <a class="nav-link" href="{% url 'orderList' %}"><i>View/Edit Orders</i></a>
         </li>
       </ul>
     </div>
@@ -146,7 +143,7 @@
                   <div class="footer_logo"><img src="{% static 'core/images/globe-icon.png' %}"></div>
                </div>
                <div class="col-sm-6 col-md-6 col-lg-3">
-                  <h4 class="footer_taital">NAVIGATION</h4>
+                  <h4 class="footer_taital">{% translate "NAVIGATION"%}</h4>
                   <div class="footer_menu_main">
                      <div class="footer_menu_left">
                         <div class="footer_menu">
@@ -168,7 +165,7 @@
                   </div>
                </div>
                <div class="col-sm-6 col-md-6 col-lg-3">
-                  <h4 class="footer_taital">Access</h4>
+                  <h4 class="footer_taital">{% translate "Access"%}</h4>
                      <div class="footer_menu">
                         <ul>
                            {% if not request.user.is_authenticated %}
@@ -190,7 +187,7 @@
                      </div>
                </div>
                <div class="col-sm-6 col-md-6 col-lg-3">
-                  <h4 class="footer_taital">Address</h4>
+                  <h4 class="footer_taital">{%translate "Address"%}</h4>
                   <p class="footer_text">Querétaro, Qro</p>
                   <p class="footer_text">252, Colonia San Francisquito, C.P. 76058</p>
                   <p class="footer_text">+51 4428105252</p>

@@ -38,8 +38,8 @@ Start
                      <div class="news_img"><img src="{{process_intro.image.url}}"></div>
                   </div>
                   <div class="col-md-6">
-                     <h1 class="give_taital">{{process_intro.title|safe}}</h1>
-                     <p class="ipsum_text">{{process_intro.content|safe}}
+                     <h1 class="give_taital light_gray_text">{{process_intro.title|safe}}</h1>
+                     <p class="ipsum_text light_gray_text">{{process_intro.content|safe}}
                      </p>
                       <div class="donate_btn_main">
                         <div class="readmore_btn"><a href="{% url 'process' %}">{% translate "Read More"%}</a></div>
@@ -62,13 +62,13 @@ Start
             </div>
             <div class="events_section_2">
                <div class="row">
-                 <div class="container">
+{% comment %}                  <div class="container">
                      <video class="video_cert" controls>
                         <source src="/media/videos/VID-20210624-WA0028.mp4" type='video/mp4'>
                         Your browser does not support the video tag.
                      </video>
-                  </div>
-                  {% comment %} <div class="col-md-5">
+                  </div> {% endcomment %}
+                  <div class="col-md-5">
                      <div class="img_7"><img src="{{certification.image.url}}" class="img_7"></div>
                      <div class="date_bt">
                         <div class="date_text active"><a href="#">{{certification.created|date:"d"}}</a></div>
@@ -81,7 +81,7 @@ Start
                      <div class="donate_btn_main">
                         <div class="readmore_btn"><a href="{% url 'process' %}">{% translate "Read More"%}</a></div>
                      </div>
-                  </div> {% endcomment %}
+                  </div>
                </div>
             </div>
          </div>
@@ -91,37 +91,22 @@ Start
       <!-- benefits section start -->
       <div class="donate_section layout_padding">
          <div class="container">
-            <h1 class="donate_taital">Our Team </h1>
+            <h1 class="donate_taital">{% translate "Our Principles"%} </h1>
             <div class="donate_taital_main">
                <div id="main_slider" class="carousel slide" data-ride="carousel">
+
                   <div class="carousel-inner">
-                     <div class="carousel-item active">
-                        <div class="donate_left">
-                           <div class="client_img"><img src="{% static 'core/images/img_avatar.png' %}"></div>
+                     {% for principle in about_principles %}
+                        <div class="carousel-item {% if forloop.first %} active {% endif %}">
+                           <div class="donate_left">
+                              <div class="client_img"><img src="{{principle.image.url}}"></div>
+                           </div>
+                           <div class="donate_right">
+                              <h3 class="client_name_text">{{principle.title|safe}}</h3>
+                              <p class="dummy_text">{{principle.content|safe}}</p>
+                           </div>
                         </div>
-                        <div class="donate_right">
-                           <h3 class="client_name_text">Tadeo Resendiz</h3>
-                           <p class="dummy_text">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefinedIf you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
-                        </div>
-                     </div>
-                     <div class="carousel-item">
-                        <div class="donate_left">
-                           <div class="client_img"><img src="{% static 'core/images/img_avatar.png' %}"></div>
-                        </div>
-                        <div class="donate_right">
-                           <h3 class="client_name_text">Juan Perez</h3>
-                           <p class="dummy_text">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefinedIf you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
-                        </div>
-                     </div>
-                     <div class="carousel-item">
-                        <div class="donate_left">
-                           <div class="client_img"><img src="{% static 'core/images/img_avatar.png' %}"></div>
-                        </div>
-                        <div class="donate_right">
-                           <h3 class="client_name_text">Pedro Hernandez</h3>
-                           <p class="dummy_text">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefinedIf you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined</p>
-                        </div>
-                     </div>
+                     {% endfor %}
                   </div>
                   <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
                   <i class="fa fa-angle-right"></i>

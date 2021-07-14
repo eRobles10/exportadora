@@ -35,7 +35,7 @@ ALLOWED_HOSTS = ['edgarrobles10.pythonanywhere.com',
 INSTALLED_APPS = [
     # 'jet',
     'registration',
-    'django_modeltranslation',
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

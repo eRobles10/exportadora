@@ -27,13 +27,14 @@ SECRET_KEY = 'b4*65*8ev_6^k5$39@)$3gjoi14&7-3@-*2y@@g4r_ny9#3^l+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['edgarrobles10.pythonanywhere.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['edgarrobles10.pythonanywhere.com',
+                 'localhost', '127.0.0.1', '153.92.2.25']
 
 # Application definition
 
 INSTALLED_APPS = [
     # 'jet',
-    'registration',
+    'registration',git
     'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',

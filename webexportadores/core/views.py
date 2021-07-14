@@ -23,10 +23,10 @@ Servicios
 class HomePageView(TemplateView):
 
     template_name = "core/home.html"
-    certification = get_object_or_404(Certification, order=0)
-    process_intro = get_object_or_404(Process, pk=1)
-    about = get_object_or_404(About, pk=1)
-    about_principles = About.objects.exclude(pk=1)
+    certification = "" """ get_object_or_404(Certification, order=0) """
+    process_intro = "" """ get_object_or_404(Process, pk=1) """
+    about = "" """ get_object_or_404(About, pk=1) """
+    about_principles = "" """ About.objects.exclude(pk=1) """
 
     def get(self, request, **kwargs):
 
